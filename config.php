@@ -1,9 +1,9 @@
 <?php
 // Database configuration
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'survey_system');
+define('DB_USER', 'u208951792_survey_system');
+define('DB_PASS', 'V5kL9q@6Df^u');
+define('DB_NAME', 'u208951792_survey_system');
 
 // Create database connection
 function getDBConnection() {
