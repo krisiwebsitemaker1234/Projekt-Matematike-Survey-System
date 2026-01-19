@@ -67,11 +67,11 @@ $conn->close();
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
+    <?php include 'include/navbar.php'; ?>
     
     <div class="container-fluid">
         <div class="row">
-            <?php include 'sidebar.php'; ?>
+            <?php include 'include/sidebar.php'; ?>
             
             <div class="col-lg-10 col-md-9">
                 <div class="content-area">
