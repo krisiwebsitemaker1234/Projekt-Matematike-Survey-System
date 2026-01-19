@@ -70,21 +70,21 @@ $conn->close();
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
+    <?php include 'navbar.php'; ?>
+    
     <div class="container-fluid">
         <div class="row">
-            <!-- Sidebar -->
-             <?php include 'sidebar.php'; ?>
+            <?php include 'sidebar.php'; ?>
             
-            <!-- Main Content -->
-            <div class="col-md-10">
+            <div class="col-lg-10 col-md-9">
                 <div class="content-area">
                     <div class="header-section">
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
                             <div>
                                 <h2><i class="bi bi-people"></i> Manage Users</h2>
-                                <p class="text-muted mb-0">Create and manage survey collectors</p>
+                                <p class="mb-0">Create and manage survey collectors</p>
                             </div>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createUserModal">
+                            <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#createUserModal">
                                 <i class="bi bi-person-plus"></i> Create New User
                             </button>
                         </div>

@@ -97,21 +97,21 @@ $conn->close();
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
+    <?php include 'navbar.php'; ?>
+    
     <div class="container-fluid">
         <div class="row">
-            <!-- Sidebar -->
-             <?php include 'sidebar.php'; ?>
+            <?php include 'sidebar.php'; ?>
             
-            <!-- Main Content -->
-            <div class="col-md-10">
+            <div class="col-lg-10 col-md-9">
                 <div class="content-area">
                     <div class="header-section">
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
                             <div>
                                 <h2><i class="bi bi-file-earmark-text"></i> Manage Records</h2>
-                                <p class="text-muted mb-0">Create and manage survey records</p>
+                                <p class="mb-0">Create and manage survey records</p>
                             </div>
-                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createRecordModal">
+                            <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#createRecordModal">
                                 <i class="bi bi-plus-circle"></i> Create New Record
                             </button>
                         </div>

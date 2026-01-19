@@ -35,17 +35,17 @@ $conn->close();
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
+    <?php include 'navbar.php'; ?>
+    
     <div class="container-fluid">
         <div class="row">
-            <!-- Sidebar -->
-             <?php include 'sidebar.php'; ?>
+            <?php include 'sidebar.php'; ?>
             
-            <!-- Main Content -->
-            <div class="col-md-10">
+            <div class="col-lg-10 col-md-9">
                 <div class="content-area">
                     <div class="header-section">
                         <h2><i class="bi bi-bar-chart"></i> View Records</h2>
-                        <p class="text-muted mb-0">View detailed statistics and visualizations for each record</p>
+                        <p class="mb-0">View detailed statistics and visualizations for each record</p>
                     </div>
                     
                     <?php if ($records->num_rows > 0): ?>

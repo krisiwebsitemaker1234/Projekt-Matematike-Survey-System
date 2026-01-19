@@ -28,7 +28,6 @@ if (!$record) {
 }
 
 // Get options with response counts
-// Formula for density table: COUNT(responses) GROUP BY option_id
 $options_query = "
     SELECT ro.id, ro.option_text, ro.option_order,
            COUNT(res.id) as response_count
@@ -68,29 +67,29 @@ $conn->close();
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
+    <?php include 'navbar.php'; ?>
+    
     <div class="container-fluid">
         <div class="row">
-            <!-- Sidebar -->
-             <?php include 'sidebar.php'; ?>
+            <?php include 'sidebar.php'; ?>
             
-            <!-- Main Content -->
-            <div class="col-md-10">
+            <div class="col-lg-10 col-md-9">
                 <div class="content-area">
                     <div class="header-section">
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
                             <div>
                                 <h2><i class="bi bi-bar-chart"></i> <?php echo htmlspecialchars($record['theme']); ?></h2>
                                 <?php if (!empty($record['description'])): ?>
-                                    <p class="text-muted mb-0"><?php echo htmlspecialchars($record['description']); ?></p>
+                                    <p class="mb-0"><?php echo htmlspecialchars($record['description']); ?></p>
                                 <?php endif; ?>
                             </div>
-                            <a href="view_records.php" class="btn btn-secondary">
+                            <a href="view_records.php" class="btn btn-light">
                                 <i class="bi bi-arrow-left"></i> Back to Records
                             </a>
                         </div>
                         <div class="mt-3">
-                            <span class="badge bg-primary me-2">Total Responses: <?php echo $total_responses; ?></span>
-                            <span class="badge bg-info"><?php echo $record['num_options']; ?> Options</span>
+                            <span class="badge bg-light text-dark me-2">Total Responses: <?php echo $total_responses; ?></span>
+                            <span class="badge bg-light text-dark"><?php echo $record['num_options']; ?> Options</span>
                         </div>
                     </div>
                     
@@ -111,7 +110,6 @@ $conn->close();
                                     <?php 
                                     $options->data_seek(0);
                                     while ($option = $options->fetch_assoc()): 
-                                        // Formula for percentage: (response_count / total_responses) * 100
                                         $percentage = $total_responses > 0 ? ($option['response_count'] / $total_responses) * 100 : 0;
                                     ?>
                                         <tr>
@@ -144,7 +142,7 @@ $conn->close();
                     
                     <div class="row">
                         <!-- Pie Chart -->
-                        <div class="col-md-6">
+                        <div class="col-lg-6 col-md-12">
                             <div class="data-card">
                                 <h4 class="mb-3"><i class="bi bi-pie-chart"></i> Pie Chart</h4>
                                 <div class="chart-container">
@@ -154,7 +152,7 @@ $conn->close();
                         </div>
                         
                         <!-- Histogram -->
-                        <div class="col-md-6">
+                        <div class="col-lg-6 col-md-12">
                             <div class="data-card">
                                 <h4 class="mb-3"><i class="bi bi-bar-chart-fill"></i> Histogram</h4>
                                 <div class="chart-container">
@@ -174,7 +172,6 @@ $conn->close();
         const chartData = <?php echo json_encode($chart_data); ?>;
         
         // Extract labels and values
-        // Formula: labels = option_text array, values = response_count array
         const labels = chartData.map(item => item.option_text);
         const values = chartData.map(item => item.response_count);
         
@@ -187,8 +184,6 @@ $conn->close();
         ];
         
         // Pie Chart Configuration
-        // Formula for pie chart: percentage = (value / sum of all values) * 360 degrees
-        // Chart.js calculates this automatically from the data values
         const pieCtx = document.getElementById('pieChart').getContext('2d');
         const pieChart = new Chart(pieCtx, {
             type: 'pie',
@@ -220,7 +215,6 @@ $conn->close();
                                 const label = context.label || '';
                                 const value = context.parsed || 0;
                                 const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                // Formula: percentage = (value / total) * 100
                                 const percentage = total > 0 ? ((value / total) * 100).toFixed(1) : 0;
                                 return label + ': ' + value + ' (' + percentage + '%)';
                             }
@@ -231,8 +225,6 @@ $conn->close();
         });
         
         // Histogram (Bar Chart) Configuration
-        // Formula for histogram: height of each bar = response_count
-        // X-axis = categories (options), Y-axis = frequency (count)
         const histogramCtx = document.getElementById('histogram').getContext('2d');
         const histogram = new Chart(histogramCtx, {
             type: 'bar',
@@ -265,7 +257,6 @@ $conn->close();
                     y: {
                         beginAtZero: true,
                         ticks: {
-                            // Formula: Y-axis displays integer counts (stepSize = 1)
                             stepSize: 1,
                             callback: function(value) {
                                 if (Number.isInteger(value)) {

@@ -28,50 +28,50 @@ $conn->close();
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
+    <?php include 'navbar.php'; ?>
+    
     <div class="container-fluid">
         <div class="row">
-            <!-- Sidebar -->
-             <?php include 'sidebar.php'; ?>
+            <?php include 'sidebar.php'; ?>
             
-            <!-- Main Content -->
-            <div class="col-md-10">
+            <div class="col-lg-10 col-md-9">
                 <div class="content-area">
                     <div class="header-section">
                         <h2><i class="bi bi-speedometer2"></i> Dashboard Overview</h2>
-                        <p class="text-muted mb-0">Monitor your survey system statistics</p>
+                        <p class="mb-0">Monitor your survey system statistics</p>
                     </div>
                     
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="card stat-card users">
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="bi bi-people"></i> Total Users</h5>
                                     <div class="stat-number"><?php echo $total_users; ?></div>
-                                    <a href="manage_users.php" class="btn btn-light mt-3 action-btn">
+                                    <a href="manage_users.php" class="btn btn-light mt-3 action-btn w-100">
                                         Manage Users
                                     </a>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="card stat-card records">
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="bi bi-file-earmark-text"></i> Total Records</h5>
                                     <div class="stat-number"><?php echo $total_records; ?></div>
-                                    <a href="manage_records.php" class="btn btn-light mt-3 action-btn">
+                                    <a href="manage_records.php" class="btn btn-light mt-3 action-btn w-100">
                                         Manage Records
                                     </a>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="card stat-card responses">
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="bi bi-chat-dots"></i> Total Responses</h5>
                                     <div class="stat-number"><?php echo $total_responses; ?></div>
-                                    <a href="view_records.php" class="btn btn-light mt-3 action-btn">
+                                    <a href="view_records.php" class="btn btn-light mt-3 action-btn w-100">
                                         View Data
                                     </a>
                                 </div>
@@ -80,11 +80,11 @@ $conn->close();
                     </div>
                     
                     <div class="row mt-4">
-                        <div class="col-md-12">
+                        <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"><i class="bi bi-lightning"></i> Quick Actions</h5>
-                                    <div class="d-flex gap-3 mt-3">
+                                    <div class="d-flex flex-wrap gap-3 mt-3">
                                         <a href="manage_users.php?action=create" class="btn btn-primary action-btn">
                                             <i class="bi bi-person-plus"></i> Create New User
                                         </a>
