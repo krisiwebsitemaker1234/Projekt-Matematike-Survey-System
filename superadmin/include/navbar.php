@@ -12,10 +12,6 @@ $current_date = date('l, F j, Y');
         <button class="navbar-toggler d-lg-none" type="button" id="sidebarToggle">
             <i class="bi bi-list" style="font-size: 1.5rem; color: var(--primary-color);"></i>
         </button>
-
-        <a class="navbar-brand" href="dashboard.php">
-            <i class="bi bi-shield-check"></i> Survey System
-        </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
