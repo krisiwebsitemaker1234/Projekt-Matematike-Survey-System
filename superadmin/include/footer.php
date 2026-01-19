@@ -1,1 +1,1 @@
-<script src="../script/scripts.js?v=<?php echo filemtime('script/scripts.js'); ?>"></script>
+<script src="../script/script.js?v=<?php echo filemtime('script/scripts.js'); ?>"></script>
