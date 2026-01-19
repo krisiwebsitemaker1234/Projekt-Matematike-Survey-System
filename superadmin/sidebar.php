@@ -2,7 +2,7 @@
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 
-<div class="col-lg-2 col-md-3 sidebar p-0">
+<div style="width: 250px;" class="col-lg-2 col-md-3 sidebar p-0">
     <div class="p-4 sidebar-header">
         <h4 class="mb-2"><i class="bi bi-shield-check"></i> Superadmin</h4>
         <p class="small mb-0 text-muted">Admin Panel</p>

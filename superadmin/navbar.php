@@ -509,7 +509,7 @@ body {
 </style>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+<nav style="width: calc(100% - 250px)" class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="dashboard.php">
             <i class="bi bi-shield-check"></i> Survey System
