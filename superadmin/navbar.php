@@ -8,8 +8,8 @@ $current_date = date('l, F j, Y');
 <style>
     /* Root Variables for Light Theme */
 :root {
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
+    --primary-color: #0d2693;
+    --secondary-color: #183d8c;
     --bg-color: #f8f9fa;
     --sidebar-bg: #2d3748;
     --sidebar-text: #e2e8f0;
