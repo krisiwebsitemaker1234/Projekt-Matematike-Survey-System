@@ -1,0 +1,1 @@
+<script src="script/scripts.js?v=<?php echo filemtime('script/scripts.js'); ?>"></script>

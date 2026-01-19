@@ -273,6 +273,7 @@ $conn->close();
             }
         });
     </script>
-    <script src="script/script.js"></script>
+    
+    <?php include 'include/footer.php'; ?>
 </body>
 </html>
