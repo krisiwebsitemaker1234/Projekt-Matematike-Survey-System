@@ -5,8 +5,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <!-- Sidebar -->
 <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
-        <h4><i class="bi bi-shield-check"></i> Superadmin</h4>
-        <p>Admin Panel</p>
+        <h4></i>Superadmin Panel</h4>
     </div>
     <nav class="nav flex-column sidebar-nav">
         <a class="nav-link <?php echo ($current_page == 'dashboard.php') ? 'active' : ''; ?>" href="dashboard.php">
